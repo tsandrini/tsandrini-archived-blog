@@ -1,0 +1,91 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-08-20 12:57+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+
+msgid "Django site admin"
+msgstr "tsandrini admin"
+
+msgid "Django administration"
+msgstr "tsandrini administration"
+
+#: entities/page.py:6
+msgid "Identifier"
+msgstr "identifikátor"
+
+#: entities/page.py:8
+msgid ""
+"Unique page identifier. Used if target page is going to be static for "
+"template loading and other unique situtations"
+msgstr ""
+
+#: entities/page.py:11
+msgid "Content"
+msgstr "Obsah"
+
+#: entities/page.py:13
+msgid "Template content. Django template syntax is supported"
+msgstr ""
+
+#: entities/page.py:16
+#, fuzzy
+#| msgid "Dynamic"
+msgid "Dynamic content"
+msgstr "Dynamický obsah"
+
+#: entities/page.py:18
+msgid ""
+"Determines, whether the page is loaded from a database storage or from a "
+"static template"
+msgstr ""
+
+#: entities/page.py:21
+msgid "Template path"
+msgstr "Cesta k šabloně"
+
+#: entities/page.py:24
+msgid "Template path for static handled pages"
+msgstr ""
+
+#: entities/page.py:27
+#, fuzzy
+#| msgid "Dynamic"
+msgid "Dynamic handling"
+msgstr "Dynamické vykreslování"
+
+#: entities/page.py:29
+msgid "Determines, whether the page owns a self handling action method"
+msgstr ""
+
+#: entities/page.py:32
+msgid "Active"
+msgstr "Aktivní"
+
+#: entities/page.py:34
+msgid "Non active pages won't be shown"
+msgstr "Neaktivní stránky nebudou zobrazeny"
+
+#. Translators: Metadata for Page entity
+#: entities/page.py:39
+msgid "Page"
+msgstr "Stránka"
+
+#. Translators: Metadata for Page entity
+#: entities/page.py:41
+msgid "Pages"
+msgstr "Stránky"
