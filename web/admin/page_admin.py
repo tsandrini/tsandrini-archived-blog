@@ -1,0 +1,35 @@
+from django.db import models
+from django.utils.translation import ugettext as _
+from django.contrib import admin
+from web.entities import Page
+from modeltranslation.admin import TranslationAdmin
+from core.admin.actions import activate
+from core.admin.actions import deactivate
+from django_ace import AceWidget as Ace
+
+@admin.register(Page)
+class PageAdmin(TranslationAdmin):
+    fields = (
+        ('identifier', 'template_path'),
+        ('dynamic_handling', 'dynamic_content', 'active'),
+        ('content_cs', 'content_en')
+    )
+    formfield_overrides = {
+        models.TextField: {
+            'widget': Ace(
+                mode='django',
+                theme='monokai',
+                wordwrap=True,
+                showprintmargin=True,
+                width='650px'
+            )
+        }
+    }
+    list_display = ['identifier', 'dynamic_content', 'dynamic_handling', 'active']
+    list_display = ['identifier', 'dynamic_content', 'dynamic_handling', 'active']
+    actions = [activate, deactivate]
+
+    class Media:
+        js = (
+            "js/admin/entities/page.js",
+        )

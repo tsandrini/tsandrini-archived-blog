@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+
+{% load static %}
+
+<html lang="en">
+
+    <head>
+
+        {% block before_head_start %}{% endblock %}
+        {% block head_start %}{% endblock %}
+        {% block after_head_start %}{% endblock %}
+
+        <meta charset="utf-8">
+
+        <title>{% block title %}{% endblock %}</title>
+        <meta name="description" content="The HTML5 Herald">
+        <meta name="author" content="{{ settings.APP_AUTHOR }}">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!--[if lt IE 9]>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+        <![endif]-->
+
+        {% block before_stylesheet_start %}{% endblock %}
+        {% block stylesheet_start %}{% endblock %}
+        {% block after_stylesheet_start %}{% endblock %}
+
+        <link rel="stylesheet" href="{% static "css/main.css" %}">
+
+        {% block before_stylesheet_end %}{% endblock %}
+        {% block stylesheet_end %}{% endblock %}
+        {% block after_stylesheet_end %}{% endblock %}
+
+        {% block before_head_end %}{% endblock %}
+        {% block head_end %}{% endblock %}
+        {% block after_head_end %}{% endblock %}
+
+    </head>
+
+    <body>
+        {% include "blocks/miscellaneous/noscript.html" %}
+
+        {% block before_body_start %}{% endblock %}
+        {% block body_start %}{% endblock %}
+        {% block after_body_start %}{% endblock %}
+
+        {% block before_script_start %}{% endblock %}
+        {% block script_start %}{% endblock %}
+        {% block after_script_start %}{% endblock %}
+
+        {% block before_script_end %}{% endblock %}
+        {% block script_end %}{% endblock %}
+        {% block after_script_end %}{% endblock %}
+
+        {% block before_body_end %}{% endblock %}
+        {% block body_end %}{% endblock %}
+        {% block after_body_end %}{% endblock %}
+
+        {% if settings.DEBUG %}
+            {% include "blocks/miscellaneous/browsersync.html" %}
+        {% endif %}
+    </body>
+
+</html>

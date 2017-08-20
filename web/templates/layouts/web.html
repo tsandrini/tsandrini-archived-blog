@@ -1,0 +1,29 @@
+{% extends "layouts/base.html" %}
+
+{% load static %}
+
+{% block before_stylesheet_start %}
+    <link rel="stylesheet" href="{% static "libs/font-awesome/css/font-awesome.min.css" %}">
+{% endblock %}
+
+{% block body_start %}
+    <div class="row">
+        <div class="col s12 m3">
+            <div class=" table cover">
+                {% include "blocks/sidebar.html" %}
+            </div>
+        </div>
+        <div class="col s12 m9">
+            <div class="post-listing">
+                {% block content %}
+                {% endblock %}
+
+                {% include "blocks/footer.html" %}
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block before_script_start %}
+    <script src="{% static "libs/jquery/jquery.min.js" %}"></script>
+{% endblock %}

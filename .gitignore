@@ -1,0 +1,23 @@
+# tsandrini
+
+## dev
+
+node_modules/
+db.sqlite3
+
+### vim
+
+.vimtags
+.vimrc
+vimtags
+*.sw?
+
+
+## app
+
+__pycache__/
+static/
+media/
+package-lock.json
+tsandrini/settings/local.py
+uwsgi_reload_file.ini
