@@ -9,8 +9,9 @@ from django_ace import AceWidget as Ace
 @admin.register(Page)
 class PageAdmin(TranslationAdmin):
     fields = (
-        ('identifier', 'template_path'),
-        ('dynamic_handling', 'dynamic_content', 'enabled'),
+        ('identifier', 'enabled'),
+        ('template_path', 'dynamic_handling'),
+        ('menu_entry', 'dynamic_content'),
         ('content_cs', 'content_en')
     )
     formfield_overrides = {
@@ -25,10 +26,9 @@ class PageAdmin(TranslationAdmin):
         }
     }
     list_display = ['identifier', 'dynamic_content', 'dynamic_handling', 'enabled']
-    list_display = ['identifier', 'dynamic_content', 'dynamic_handling', 'enabled']
     actions = [enable, disable]
 
     class Media:
         js = (
-            "js/admin/entities/page.js",
+            'js/admin/entities/page.js',
         )

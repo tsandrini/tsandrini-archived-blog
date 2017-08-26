@@ -1,7 +1,14 @@
 from django.db import models
 from django.utils.translation import ugettext as _
+from web.entities.menu_entry import MenuEntry
 
 class Page(models.Model):
+    menu_entry = models.ForeignKey(
+        MenuEntry,
+        null=True,
+        blank=True,
+        on_delete=models.CASCADE
+    )
     identifier = models.CharField(
         _("Identifier"),
         max_length=50,
@@ -11,6 +18,7 @@ class Page(models.Model):
     content = models.TextField(
         _("Content"),
         null=True,
+        blank=True,
         # Translators: Content help text shown in Page form
         help_text=_("Template content. Django template syntax is supported")
     )
@@ -24,6 +32,7 @@ class Page(models.Model):
         _("Template path"),
         max_length=155,
         null=True,
+        blank=True,
         # Translators: Template path help text shown in Page form
         help_text=_("Template path for static handled pages")
     )
@@ -34,10 +43,10 @@ class Page(models.Model):
         help_text=_("Determines, whether the page owns a self handling action method")
     )
     enabled = models.BooleanField(
-        _("Active"),
+        _("Enabled"),
         default=False,
-        # Translators: Active help text shown in Page form
-        help_text=_("Non active pages won't be shown")
+        # Translators: Enabled help text shown in MenuEntry form
+        help_text=_("Disabled entities aren't publicaly available")
     )
 
     class Meta:
