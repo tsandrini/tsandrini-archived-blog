@@ -3,15 +3,14 @@ from django.utils.translation import ugettext as _
 from django.contrib import admin
 from web.entities import Page
 from modeltranslation.admin import TranslationAdmin
-from core.admin.actions import activate
-from core.admin.actions import deactivate
+from core.admin.actions import enable, disable
 from django_ace import AceWidget as Ace
 
 @admin.register(Page)
 class PageAdmin(TranslationAdmin):
     fields = (
         ('identifier', 'template_path'),
-        ('dynamic_handling', 'dynamic_content', 'active'),
+        ('dynamic_handling', 'dynamic_content', 'enabled'),
         ('content_cs', 'content_en')
     )
     formfield_overrides = {
@@ -25,9 +24,9 @@ class PageAdmin(TranslationAdmin):
             )
         }
     }
-    list_display = ['identifier', 'dynamic_content', 'dynamic_handling', 'active']
-    list_display = ['identifier', 'dynamic_content', 'dynamic_handling', 'active']
-    actions = [activate, deactivate]
+    list_display = ['identifier', 'dynamic_content', 'dynamic_handling', 'enabled']
+    list_display = ['identifier', 'dynamic_content', 'dynamic_handling', 'enabled']
+    actions = [enable, disable]
 
     class Media:
         js = (

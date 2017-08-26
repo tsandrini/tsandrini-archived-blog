@@ -1,4 +1,4 @@
-from core.admin.actions.activate import activate
-from core.admin.actions.deactivate import deactivate
+from core.admin.actions.enable import enable
+from core.admin.actions.disable import disable
 
-__all__ = ['activate', 'deactivate']
+__all__ = ['enable', 'disable']

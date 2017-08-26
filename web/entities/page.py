@@ -33,9 +33,9 @@ class Page(models.Model):
         # Translators: Dynamic handling help text shown in Page form
         help_text=_("Determines, whether the page owns a self handling action method")
     )
-    active = models.BooleanField(
+    enabled = models.BooleanField(
         _("Active"),
-        default=True,
+        default=False,
         # Translators: Active help text shown in Page form
         help_text=_("Non active pages won't be shown")
     )
