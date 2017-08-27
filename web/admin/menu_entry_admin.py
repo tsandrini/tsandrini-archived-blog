@@ -9,8 +9,9 @@ from django_ace import AceWidget as Ace
 @admin.register(MenuEntry)
 class MenuEntryAdmin(TranslationAdmin):
     fields = (
-        ('slug_cs', 'slug_en'),
+        ('slug'),
         ('parent', 'position')
     )
-    list_display = ['enabled']
-    actions = [enable, disable]
+    search_fields = ('slug',)
+    list_display = ('__str__', 'enabled')
+    actions = (enable, disable)
